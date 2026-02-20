@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Velmora logo</title>
+  <desc id="desc">A circular emblem with a refined V monogram.</desc>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#c8744c" stroke-width="4" />
+  <path
+    d="M36 38 L60 86 L84 38"
+    fill="none"
+    stroke="#1f1c17"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="60" cy="32" r="3" fill="#1f1c17" />
+</svg>

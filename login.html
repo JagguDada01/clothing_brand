@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Velmora — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+        <div>
+          <p class="brand-name">Velmora</p>
+          <p class="brand-tag">Everyday essentials</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn ghost" href="index.html">Back to home</a>
+        <a class="btn" href="signup.html">Sign up</a>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-card">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h1>Login</h1>
+          <p class="muted">Sign in to view your orders and saved items.</p>
+        </div>
+        <form class="auth-form">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com" required />
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" placeholder="••••••••" required />
+          <div class="auth-helper">
+            <label class="checkbox">
+              <input type="checkbox" />
+              Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="btn" type="submit">Login</button>
+        </form>
+        <p class="muted auth-switch">
+          New here? <a href="signup.html">Create an account</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
