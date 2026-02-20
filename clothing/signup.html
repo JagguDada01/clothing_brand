@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Velmora — Sign up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+        <div>
+          <p class="brand-name">Velmora</p>
+          <p class="brand-tag">Everyday essentials</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn ghost" href="index.html">Back to home</a>
+        <a class="btn" href="login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-card">
+        <div>
+          <p class="eyebrow">Create your account</p>
+          <h1>Sign up</h1>
+          <p class="muted">Save your cart, track orders, and get early access.</p>
+        </div>
+        <form class="auth-form">
+          <label for="signupName">Full name</label>
+          <input id="signupName" type="text" placeholder="Your name" required />
+          <label for="signupEmail">Email</label>
+          <input id="signupEmail" type="email" placeholder="you@example.com" required />
+          <label for="signupPassword">Password</label>
+          <input id="signupPassword" type="password" placeholder="Create a password" required />
+          <label for="signupConfirm">Confirm password</label>
+          <input id="signupConfirm" type="password" placeholder="Repeat your password" required />
+          <button class="btn" type="submit">Create account</button>
+        </form>
+        <p class="muted auth-switch">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

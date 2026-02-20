@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Velmora — Clothing Brand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+        <div>
+          <p class="brand-name">Velmora</p>
+          <p class="brand-tag">Everyday essentials</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#values">Values</a>
+        <a href="#blog">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn ghost" href="login.html">Login</a>
+        <a class="btn" href="signup.html">Sign up</a>
+        <button class="btn ghost" id="cartButton">
+          Cart (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <section class="hero-banner" aria-label="Featured image"></section>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Collection 04 • Desert Bloom</p>
+          <h1>Tailored minimalism, woven with sun-faded color.</h1>
+          <p class="lead">
+            Velmora crafts slow-made layers for the in-between seasons—breathable
+            linens, sculpted cottons, and elevated lounge silhouettes.
+          </p>
+          <div class="hero-actions">
+            <button class="btn">Shop now</button>
+            <button class="btn ghost">Book a fitting</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <p class="stat-value">48 hrs</p>
+              <p class="stat-label">to ship worldwide</p>
+            </div>
+            <div>
+              <p class="stat-value">89%</p>
+              <p class="stat-label">natural fibers</p>
+            </div>
+            <div>
+              <p class="stat-value">12</p>
+              <p class="stat-label">new pieces</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="shape-card reveal">
+            <p>Our Workshop</p>
+            <h3>Neat stitching</h3>
+            <p class="muted">Caspian linen, cocoa twill, amber cotton.</p>
+          </div>
+          <div class="shape-card large reveal">
+            <div class="texture"></div>
+            <div class="card-footer">
+              <p>Signature</p>
+              <h3>Arc Wrap Coat</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Limited run •</span>
+          <span>Free fittings in Delhi •</span>
+          <span>Carbon neutral shipping •</span>
+          <span>Limited run •</span>
+          <span>Free fittings in Delhi •</span>
+          <span>Carbon neutral shipping •</span>
+        </div>
+      </section>
+
+      <section id="products" class="section featured-products">
+        <div class="section-header">
+          <h2>Featured products</h2>
+          <p>Soft structure, built to move. Each piece is numbered and released in short runs.</p>
+        </div>
+        <div class="card-grid">
+          <article class="product-card reveal">
+            <div class="product-image"></div>
+            <div class="product-info">
+              <div>
+                <h3>Arc Wrap Coat</h3>
+                <p class="muted">Stone linen blend</p>
+              </div>
+              <span class="price">$420</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–XL</span>
+              <span>Made to order</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Arc Wrap Coat" data-price="420">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-image alt"></div>
+            <div class="product-info">
+              <div>
+                <h3>Halo Camp Shirt</h3>
+                <p class="muted">Amber cotton</p>
+              </div>
+              <span class="price">$180</span>
+            </div>
+            <div class="product-meta">
+              <span>S–XXL</span>
+              <span>In stock</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Halo Camp Shirt" data-price="180">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-image deep"></div>
+            <div class="product-info">
+              <div>
+                <h3>Drift Lounge Set</h3>
+                <p class="muted">Cocoa terry</p>
+              </div>
+              <span class="price">$240</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–XL</span>
+              <span>Ships in 5 days</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Drift Lounge Set" data-price="240">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/Teaser-2x3.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Dune Utility Jacket</h3>
+                <p class="muted">Canvas cotton</p>
+              </div>
+              <span class="price">$260</span>
+            </div>
+            <div class="product-meta">
+              <span>S–XL</span>
+              <span>In stock</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Dune Utility Jacket" data-price="260">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/WS13K-Women-Startpage-wk08-2x3.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Solstice Pleat Trouser</h3>
+                <p class="muted">Sand twill</p>
+              </div>
+              <span class="price">$210</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–XL</span>
+              <span>Made to order</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Solstice Pleat Trouser" data-price="210">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/145de3c4e1821c1ad174a32b732e18f64c3200af.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Meridian Knit Polo</h3>
+                <p class="muted">Ribbed cotton</p>
+              </div>
+              <span class="price">$150</span>
+            </div>
+            <div class="product-meta">
+              <span>S–XXL</span>
+              <span>In stock</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Meridian Knit Polo" data-price="150">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/6eb41ff0522f412aa94b5d0b992bf9a37cda65b0.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Cove Slip Dress</h3>
+                <p class="muted">Rose linen</p>
+              </div>
+              <span class="price">$230</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–L</span>
+              <span>In stock</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Cove Slip Dress" data-price="230">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/b3d611b2ee6223268c47772e943ccc3675b84151.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Field Pocket Overshirt</h3>
+                <p class="muted">Washed denim</p>
+              </div>
+              <span class="price">$190</span>
+            </div>
+            <div class="product-meta">
+              <span>S–XL</span>
+              <span>Ships in 3 days</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Field Pocket Overshirt" data-price="190">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/a54a053328dcb85d80ec21a691f04590fcb3a706.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Linen Skirt</h3>
+                <p class="muted">Bone linen</p>
+              </div>
+              <span class="price">$175</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–L</span>
+              <span>Made to order</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Linen Skirt" data-price="175">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/262c69e4f7d2c0593ff1a87476d6200042820cb0.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>Harbor Button Shirt</h3>
+                <p class="muted">Soft poplin</p>
+              </div>
+              <span class="price">$135</span>
+            </div>
+            <div class="product-meta">
+              <span>S–XXL</span>
+              <span>In stock</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Harbor Button Shirt" data-price="135">
+              Add to cart
+            </button>
+          </article>
+          <article class="product-card reveal">
+            <div
+              class="product-image"
+              style="background-image: url('assets2/aeff63bfc946b325676250ae794afff2c4c37a6b.jpg')"
+            ></div>
+            <div class="product-info">
+              <div>
+                <h3>River Wide Pants</h3>
+                <p class="muted">Lightweight twill</p>
+              </div>
+              <span class="price">$195</span>
+            </div>
+            <div class="product-meta">
+              <span>XS–XL</span>
+              <span>Ships in 3 days</span>
+            </div>
+            <button class="btn add-to-cart" data-name="River Wide Pants" data-price="195">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="section lookbook">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Layer light, tone-on-tone styling for coastal evenings and city mornings.</p>
+        </div>
+        <div class="lookbook-grid">
+          <div class="look tile-a reveal">
+            <p>01</p>
+            <h3>Coastline</h3>
+            <span>Arc Coat + Halo Shirt</span>
+          </div>
+          <div class="look tile-b reveal">
+            <p>02</p>
+            <h3>City Drift</h3>
+            <span>Knit Top + Verve Trouser</span>
+          </div>
+          <div class="look tile-c reveal">
+            <p>03</p>
+            <h3>Sunroom</h3>
+            <span>Whisper Tee + Tide Skirt</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="values" class="section ethos">
+        <div class="section-header">
+          <h2>Our values</h2>
+          <p>Design that honors the hands behind it.</p>
+        </div>
+        <div class="ethos-grid">
+          <div class="ethos-card reveal">
+            <h3>Small-run manufacture</h3>
+            <p>
+              Each batch is limited to 120 pieces. We cut, sew, and finish in our Newark workshop
+              with a rotating roster of artisans.
+            </p>
+          </div>
+          <div class="ethos-card reveal">
+            <h3>Material honesty</h3>
+            <p>
+              Organic cottons, regenerative linen, and recycled hardware. We publish full material
+              disclosures for every style.
+            </p>
+          </div>
+          <div class="ethos-card reveal">
+            <h3>Repair + renew</h3>
+            <p>
+              Complimentary repairs for 18 months, with a refresh service that re-dyes and reworks
+              archival pieces.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section journal">
+        <div class="section-header">
+          <h2>From the blog</h2>
+          <p>Notes on process, people, and the places we source from.</p>
+        </div>
+        <div class="journal-grid">
+          <article class="journal-card reveal">
+            <p class="eyebrow">Material Study</p>
+            <h3>The linen fields of Carmague</h3>
+            <p class="muted">Why we chose sun-bleached flax for Collection 04.</p>
+          </article>
+          <article class="journal-card reveal">
+            <p class="eyebrow">Behind the scenes</p>
+            <h3>Meet our lead tailor, Sol</h3>
+            <p class="muted">A decade of tailoring, now in our workshop.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section newsletter">
+        <div class="newsletter-card reveal">
+          <div>
+            <h2>Join the email list</h2>
+            <p>Early access to new products, events, and style notes.</p>
+          </div>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email address" aria-label="Email address" />
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Your cart</h3>
+        <button class="btn ghost" id="cartClose" type="button">Close</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="muted">Your cart is empty.</p>
+      </div>
+      <div class="cart-summary">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button class="btn" id="placeOrder" type="button">Place order</button>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div>
+        <h3>Velmora</h3>
+        <p class="muted">Fittings by appointment • Delhi, India</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Shipping</a>
+        <a href="#">Sizing</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p class="muted">hello@velmora.in</p>
+        <p class="muted">+91 98765 43210</p>
+        <p class="muted">www.velmora.in</p>
+      </div>
+      <p class="muted credits">
+        Photography: <a href="https://unsplash.com">Unsplash</a> and
+        <a href="https://www.pexels.com">Pexels</a>.
+      </p>
+      <p class="muted footer-copy">© 2026 Velmora. All rights reserved.</p>
+      <p class="muted footer-copy">Made with &hearts; by Jagjeet</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
