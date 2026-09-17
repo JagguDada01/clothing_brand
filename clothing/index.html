@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Velmora — Clothing Brand</title>
+    <title>Velmora — Luxury Everyday Clothing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,31 +13,38 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise"></div>
     <header class="site-header">
       <div class="brand">
-        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
-        <div>
-          <p class="brand-name">Velmora</p>
-          <p class="brand-tag">Everyday essentials</p>
-        </div>
+        <a href="index.html" class="brand-link">
+          <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+          <div>
+            <p class="brand-name">Velmora</p>
+            <p class="brand-tag">Everyday essentials</p>
+          </div>
+        </a>
       </div>
       <nav class="nav">
-        <a href="#products">Products</a>
+        <a href="#featured">Featured</a>
+        <a href="#outerwear">Outerwear</a>
+        <a href="#womens">Women</a>
+        <a href="#mens">Men</a>
+        <a href="#loungewear">Lounge</a>
         <a href="#gallery">Gallery</a>
         <a href="#values">Values</a>
-        <a href="#blog">Blog</a>
       </nav>
       <div class="header-actions">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn" href="signup.html">Sign up</a>
-        <button class="btn ghost" id="cartButton">
+        <!-- Dynamic Auth State Area -->
+        <div id="authActions" class="user-header-wrap">
+          <a class="btn ghost" href="login.html" id="headerLoginBtn">Login</a>
+          <a class="btn" href="signup.html" id="headerSignupBtn">Sign up</a>
+        </div>
+        <button class="btn ghost" id="cartButton" aria-label="View Shopping Cart">
           Cart (<span id="cartCount">0</span>)
         </button>
       </div>
     </header>
 
-    <section class="hero-banner" aria-label="Featured image"></section>
+    <section class="hero-banner" aria-label="Velmora Collection Showcase"></section>
 
     <main>
       <section class="hero">
@@ -49,34 +56,33 @@
             linens, sculpted cottons, and elevated lounge silhouettes.
           </p>
           <div class="hero-actions">
-            <button class="btn">Shop now</button>
-            <button class="btn ghost">Book a fitting</button>
+            <a href="#featured" class="btn">Explore catalog</a>
+            <a href="#values" class="btn ghost">Our craft</a>
           </div>
           <div class="hero-stats">
             <div>
               <p class="stat-value">48 hrs</p>
-              <p class="stat-label">to ship worldwide</p>
+              <p class="stat-label">worldwide dispatch</p>
             </div>
             <div>
               <p class="stat-value">89%</p>
               <p class="stat-label">natural fibers</p>
             </div>
             <div>
-              <p class="stat-value">12</p>
-              <p class="stat-label">new pieces</p>
+              <p class="stat-value">16</p>
+              <p class="stat-label">curated pieces</p>
             </div>
           </div>
         </div>
         <div class="hero-visual">
           <div class="shape-card reveal">
-            <p>Our Workshop</p>
-            <h3>Neat stitching</h3>
-            <p class="muted">Caspian linen, cocoa twill, amber cotton.</p>
+            <p class="eyebrow" style="margin-bottom:4px;">Our Workshop</p>
+            <h3>Neat stitching & organic textiles</h3>
+            <p class="muted">Caspian linen, cocoa twill, amber cotton and raw silks.</p>
           </div>
           <div class="shape-card large reveal">
-            <div class="texture"></div>
             <div class="card-footer">
-              <p>Signature</p>
+              <p style="font-size:11px; text-transform:uppercase; letter-spacing:1px;">Signature Silhouette</p>
               <h3>Arc Wrap Coat</h3>
             </div>
           </div>
@@ -86,22 +92,45 @@
       <section class="ticker" aria-hidden="true">
         <div class="ticker-track">
           <span>Limited run •</span>
-          <span>Free fittings in Delhi •</span>
-          <span>Carbon neutral shipping •</span>
-          <span>Limited run •</span>
-          <span>Free fittings in Delhi •</span>
-          <span>Carbon neutral shipping •</span>
+          <span>Sign in required to reserve items •</span>
+          <span>Complimentary fittings in Delhi •</span>
+          <span>Carbon neutral delivery •</span>
+          <span>Organic certified textiles •</span>
+          <span>Small batch craftsmanship •</span>
         </div>
       </section>
 
-      <section id="products" class="section featured-products">
-        <div class="section-header">
-          <h2>Featured products</h2>
-          <p>Soft structure, built to move. Each piece is numbered and released in short runs.</p>
+      <!-- Category Filter Tabs Bar -->
+      <section class="category-nav-wrap">
+        <div class="category-nav-bar">
+          <div class="category-tabs" role="tablist" aria-label="Clothing Categories">
+            <button class="cat-tab active" data-filter="all" role="tab">All Pieces (16)</button>
+            <button class="cat-tab" data-filter="outerwear" role="tab">Outerwear & Coats</button>
+            <button class="cat-tab" data-filter="womens" role="tab">Women's Collection</button>
+            <button class="cat-tab" data-filter="mens" role="tab">Men's Essentials</button>
+            <button class="cat-tab" data-filter="loungewear" role="tab">Lounge & Knitwear</button>
+          </div>
+          <span class="catalog-search-hint">✨ Premium seasonal fabrications</span>
         </div>
+      </section>
+
+      <!-- SECTION: Featured / Signature -->
+      <section id="featured" class="section collection-section" data-section-category="featured">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-tag">Curated Highlights</span>
+            <h2>Featured Arrivals</h2>
+          </div>
+          <p>Hand-cut and assembled in limited batches of 120 pieces. Each style is individually numbered.</p>
+        </div>
+
         <div class="card-grid">
-          <article class="product-card reveal">
-            <div class="product-image"></div>
+          <!-- Item 1: Arc Wrap Coat -->
+          <article class="product-card reveal" data-category="outerwear" data-id="arc-wrap-coat">
+            <div class="product-image-wrap">
+              <span class="product-badge gold">Bestseller</span>
+              <div class="product-image" style="background-image: url('assets/drop-arc-coat.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
                 <h3>Arc Wrap Coat</h3>
@@ -109,341 +138,789 @@
               </div>
               <span class="price">$420</span>
             </div>
-            <div class="product-meta">
-              <span>XS–XL</span>
-              <span>Made to order</span>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip selected" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
             </div>
-            <button class="btn add-to-cart" data-name="Arc Wrap Coat" data-price="420">
+            <div class="product-meta">
+              <span class="stock-tag">Made to order</span>
+              <span>Ships in 48h</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Arc Wrap Coat" data-price="420" data-image="assets/drop-arc-coat.jpg">
               Add to cart
             </button>
           </article>
-          <article class="product-card reveal">
-            <div class="product-image alt"></div>
+
+          <!-- Item 2: Halo Camp Shirt -->
+          <article class="product-card reveal" data-category="mens" data-id="halo-camp-shirt">
+            <div class="product-image-wrap">
+              <span class="product-badge accent">Signature</span>
+              <div class="product-image" style="background-image: url('assets/drop-halo-shirt.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
                 <h3>Halo Camp Shirt</h3>
-                <p class="muted">Amber cotton</p>
+                <p class="muted">Amber cotton poplin</p>
               </div>
               <span class="price">$180</span>
             </div>
-            <div class="product-meta">
-              <span>S–XXL</span>
-              <span>In stock</span>
-            </div>
-            <button class="btn add-to-cart" data-name="Halo Camp Shirt" data-price="180">
-              Add to cart
-            </button>
-          </article>
-          <article class="product-card reveal">
-            <div class="product-image deep"></div>
-            <div class="product-info">
-              <div>
-                <h3>Drift Lounge Set</h3>
-                <p class="muted">Cocoa terry</p>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+                <button type="button" class="size-chip" data-size="XXL">XXL</button>
               </div>
-              <span class="price">$240</span>
             </div>
             <div class="product-meta">
-              <span>XS–XL</span>
-              <span>Ships in 5 days</span>
+              <span class="stock-tag">In stock</span>
+              <span>100% Cotton</span>
             </div>
-            <button class="btn add-to-cart" data-name="Drift Lounge Set" data-price="240">
+            <button class="btn add-to-cart" data-name="Halo Camp Shirt" data-price="180" data-image="assets/drop-halo-shirt.jpg">
               Add to cart
             </button>
           </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/Teaser-2x3.jpg')"
-            ></div>
+
+          <!-- Item 3: Silk-Linen Wrap Blouse -->
+          <article class="product-card reveal" data-category="womens" data-id="silk-wrap-blouse">
+            <div class="product-image-wrap">
+              <span class="product-badge green">New Arrival</span>
+              <div class="product-image" style="background-image: url('assets/silk-wrap-blouse.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
-                <h3>Dune Utility Jacket</h3>
-                <p class="muted">Canvas cotton</p>
-              </div>
-              <span class="price">$260</span>
-            </div>
-            <div class="product-meta">
-              <span>S–XL</span>
-              <span>In stock</span>
-            </div>
-            <button class="btn add-to-cart" data-name="Dune Utility Jacket" data-price="260">
-              Add to cart
-            </button>
-          </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/WS13K-Women-Startpage-wk08-2x3.jpg')"
-            ></div>
-            <div class="product-info">
-              <div>
-                <h3>Solstice Pleat Trouser</h3>
-                <p class="muted">Sand twill</p>
-              </div>
-              <span class="price">$210</span>
-            </div>
-            <div class="product-meta">
-              <span>XS–XL</span>
-              <span>Made to order</span>
-            </div>
-            <button class="btn add-to-cart" data-name="Solstice Pleat Trouser" data-price="210">
-              Add to cart
-            </button>
-          </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/145de3c4e1821c1ad174a32b732e18f64c3200af.jpg')"
-            ></div>
-            <div class="product-info">
-              <div>
-                <h3>Meridian Knit Polo</h3>
-                <p class="muted">Ribbed cotton</p>
-              </div>
-              <span class="price">$150</span>
-            </div>
-            <div class="product-meta">
-              <span>S–XXL</span>
-              <span>In stock</span>
-            </div>
-            <button class="btn add-to-cart" data-name="Meridian Knit Polo" data-price="150">
-              Add to cart
-            </button>
-          </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/6eb41ff0522f412aa94b5d0b992bf9a37cda65b0.jpg')"
-            ></div>
-            <div class="product-info">
-              <div>
-                <h3>Cove Slip Dress</h3>
-                <p class="muted">Rose linen</p>
-              </div>
-              <span class="price">$230</span>
-            </div>
-            <div class="product-meta">
-              <span>XS–L</span>
-              <span>In stock</span>
-            </div>
-            <button class="btn add-to-cart" data-name="Cove Slip Dress" data-price="230">
-              Add to cart
-            </button>
-          </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/b3d611b2ee6223268c47772e943ccc3675b84151.jpg')"
-            ></div>
-            <div class="product-info">
-              <div>
-                <h3>Field Pocket Overshirt</h3>
-                <p class="muted">Washed denim</p>
+                <h3>Silk-Linen Wrap Blouse</h3>
+                <p class="muted">Ivory raw silk blend</p>
               </div>
               <span class="price">$190</span>
             </div>
-            <div class="product-meta">
-              <span>S–XL</span>
-              <span>Ships in 3 days</span>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip selected" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+              </div>
             </div>
-            <button class="btn add-to-cart" data-name="Field Pocket Overshirt" data-price="190">
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Pure Mulberry Silk</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Silk-Linen Wrap Blouse" data-price="190" data-image="assets/silk-wrap-blouse.jpg">
               Add to cart
             </button>
           </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/a54a053328dcb85d80ec21a691f04590fcb3a706.jpg')"
-            ></div>
+
+          <!-- Item 4: Drift Lounge Set -->
+          <article class="product-card reveal" data-category="loungewear" data-id="drift-lounge-set">
+            <div class="product-image-wrap">
+              <span class="product-badge">2-Piece Set</span>
+              <div class="product-image" style="background-image: url('assets/drop-drift-set.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
-                <h3>Linen Skirt</h3>
-                <p class="muted">Bone linen</p>
+                <h3>Drift Lounge Set</h3>
+                <p class="muted">Cocoa French terry</p>
+              </div>
+              <span class="price">$240</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">Limited batch</span>
+              <span>Ultra-soft terry</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Drift Lounge Set" data-price="240" data-image="assets/drop-drift-set.jpg">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: Outerwear & Tailoring -->
+      <section id="outerwear" class="section collection-section" data-section-category="outerwear">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-tag">Structured Layers</span>
+            <h2>Outerwear & Tailoring</h2>
+          </div>
+          <p>Architectural lines designed for all climates. Weather-resistant gabardines, heavy linens, and canvas.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Dune Utility Jacket -->
+          <article class="product-card reveal" data-category="outerwear" data-id="dune-utility-jacket">
+            <div class="product-image-wrap">
+              <span class="product-badge gold">Weatherproof</span>
+              <div class="product-image" style="background-image: url('assets2/39221ef90b1a16f52bfc25788730afff638b15ac.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Dune Utility Jacket</h3>
+                <p class="muted">Structured canvas cotton</p>
+              </div>
+              <span class="price">$260</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Reinforced pockets</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Dune Utility Jacket" data-price="260" data-image="assets2/39221ef90b1a16f52bfc25788730afff638b15ac.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Caspian Trench Coat -->
+          <article class="product-card reveal" data-category="outerwear" data-id="caspian-trench-coat">
+            <div class="product-image-wrap">
+              <span class="product-badge green">New Drop</span>
+              <div class="product-image" style="background-image: url('assets/trench-coat.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Caspian Trench Coat</h3>
+                <p class="muted">Sand cotton gabardine</p>
+              </div>
+              <span class="price">$380</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">Made to order</span>
+              <span>Double-breasted cut</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Caspian Trench Coat" data-price="380" data-image="assets/trench-coat.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Field Pocket Overshirt -->
+          <article class="product-card reveal" data-category="outerwear" data-id="field-pocket-overshirt">
+            <div class="product-image-wrap">
+              <span class="product-badge">Heavyweight</span>
+              <div class="product-image" style="background-image: url('assets2/b3d611b2ee6223268c47772e943ccc3675b84151.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Field Pocket Overshirt</h3>
+                <p class="muted">Washed indigo twill</p>
+              </div>
+              <span class="price">$190</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Ships in 2 days</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Field Pocket Overshirt" data-price="190" data-image="assets2/b3d611b2ee6223268c47772e943ccc3675b84151.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Studio Chore Blazer -->
+          <article class="product-card reveal" data-category="outerwear" data-id="studio-chore-blazer">
+            <div class="product-image-wrap">
+              <span class="product-badge accent">Artisan Finish</span>
+              <div class="product-image" style="background-image: url('assets2/758c7f5eb69bfd47f6661ca5ac1b66ac3bc65e8c.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Studio Chore Blazer</h3>
+                <p class="muted">Unstructured wool twill</p>
+              </div>
+              <span class="price">$310</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip selected" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">Limited run</span>
+              <span>Horn button detailing</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Studio Chore Blazer" data-price="310" data-image="assets2/758c7f5eb69bfd47f6661ca5ac1b66ac3bc65e8c.jpg">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: Women's Collection -->
+      <section id="womens" class="section collection-section" data-section-category="womens">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-tag">Feminine Forms</span>
+            <h2>Women's Collection</h2>
+          </div>
+          <p>Fluid drapes, sculpted pleats, and tactile natural fibers curated for relaxed poise.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Cove Slip Dress -->
+          <article class="product-card reveal" data-category="womens" data-id="cove-slip-dress">
+            <div class="product-image-wrap">
+              <span class="product-badge gold">Bestseller</span>
+              <div class="product-image" style="background-image: url('assets2/6eb41ff0522f412aa94b5d0b992bf9a37cda65b0.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Cove Slip Dress</h3>
+                <p class="muted">Dusty rose French linen</p>
+              </div>
+              <span class="price">$230</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip selected" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Bias cut drape</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Cove Slip Dress" data-price="230" data-image="assets2/6eb41ff0522f412aa94b5d0b992bf9a37cda65b0.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Solstice Pleat Trouser -->
+          <article class="product-card reveal" data-category="womens" data-id="solstice-pleat-trouser">
+            <div class="product-image-wrap">
+              <span class="product-badge">Tailored High-Rise</span>
+              <div class="product-image" style="background-image: url('assets2/WS13K-Women-Startpage-wk08-2x3.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Solstice Pleat Trouser</h3>
+                <p class="muted">Sand washed twill</p>
+              </div>
+              <span class="price">$210</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">Made to order</span>
+              <span>Double front pleat</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Solstice Pleat Trouser" data-price="210" data-image="assets2/WS13K-Women-Startpage-wk08-2x3.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Bone Linen Skirt -->
+          <article class="product-card reveal" data-category="womens" data-id="bone-linen-skirt">
+            <div class="product-image-wrap">
+              <span class="product-badge green">Pure Linen</span>
+              <div class="product-image" style="background-image: url('assets2/a54a053328dcb85d80ec21a691f04590fcb3a706.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Bone Linen Midi Skirt</h3>
+                <p class="muted">Unbleached organic flax</p>
               </div>
               <span class="price">$175</span>
             </div>
-            <div class="product-meta">
-              <span>XS–L</span>
-              <span>Made to order</span>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip selected" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+              </div>
             </div>
-            <button class="btn add-to-cart" data-name="Linen Skirt" data-price="175">
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Concealed zip</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Bone Linen Midi Skirt" data-price="175" data-image="assets2/a54a053328dcb85d80ec21a691f04590fcb3a706.jpg">
               Add to cart
             </button>
           </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/262c69e4f7d2c0593ff1a87476d6200042820cb0.jpg')"
-            ></div>
+
+          <!-- Sunroom Day Slip -->
+          <article class="product-card reveal" data-category="womens" data-id="sunroom-day-slip">
+            <div class="product-image-wrap">
+              <span class="product-badge">Summer Weight</span>
+              <div class="product-image" style="background-image: url('assets/look-sunroom.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Sunroom Tiered Dress</h3>
+                <p class="muted">Breezy buttercup cotton</p>
+              </div>
+              <span class="price">$220</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip selected" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Pockets included</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Sunroom Tiered Dress" data-price="220" data-image="assets/look-sunroom.jpg">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: Men's Essentials -->
+      <section id="mens" class="section collection-section" data-section-category="mens">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-tag">Modern Tailoring</span>
+            <h2>Men's Essentials</h2>
+          </div>
+          <p>Clean collar geometry, breathable summer knits, and relaxed drape trousers built to age gracefully.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Meridian Knit Polo -->
+          <article class="product-card reveal" data-category="mens" data-id="meridian-knit-polo">
+            <div class="product-image-wrap">
+              <span class="product-badge gold">Bestseller</span>
+              <div class="product-image" style="background-image: url('assets2/145de3c4e1821c1ad174a32b732e18f64c3200af.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Meridian Knit Polo</h3>
+                <p class="muted">Ribbed organic cotton</p>
+              </div>
+              <span class="price">$150</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+                <button type="button" class="size-chip" data-size="XXL">XXL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Mother-of-pearl buttons</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Meridian Knit Polo" data-price="150" data-image="assets2/145de3c4e1821c1ad174a32b732e18f64c3200af.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Harbor Button Shirt -->
+          <article class="product-card reveal" data-category="mens" data-id="harbor-button-shirt">
+            <div class="product-image-wrap">
+              <span class="product-badge">Lightweight</span>
+              <div class="product-image" style="background-image: url('assets2/262c69e4f7d2c0593ff1a87476d6200042820cb0.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
                 <h3>Harbor Button Shirt</h3>
-                <p class="muted">Soft poplin</p>
+                <p class="muted">Soft coastal poplin</p>
               </div>
               <span class="price">$135</span>
             </div>
-            <div class="product-meta">
-              <span>S–XXL</span>
-              <span>In stock</span>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip selected" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
             </div>
-            <button class="btn add-to-cart" data-name="Harbor Button Shirt" data-price="135">
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>French seams</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Harbor Button Shirt" data-price="135" data-image="assets2/262c69e4f7d2c0593ff1a87476d6200042820cb0.jpg">
               Add to cart
             </button>
           </article>
-          <article class="product-card reveal">
-            <div
-              class="product-image"
-              style="background-image: url('assets2/aeff63bfc946b325676250ae794afff2c4c37a6b.jpg')"
-            ></div>
+
+          <!-- River Wide Pants -->
+          <article class="product-card reveal" data-category="mens" data-id="river-wide-pants">
+            <div class="product-image-wrap">
+              <span class="product-badge accent">Relaxed Silhouette</span>
+              <div class="product-image" style="background-image: url('assets2/aeff63bfc946b325676250ae794afff2c4c37a6b.jpg');"></div>
+            </div>
             <div class="product-info">
               <div>
                 <h3>River Wide Pants</h3>
-                <p class="muted">Lightweight twill</p>
+                <p class="muted">Lightweight pleated twill</p>
               </div>
               <span class="price">$195</span>
             </div>
-            <div class="product-meta">
-              <span>XS–XL</span>
-              <span>Ships in 3 days</span>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip selected" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
             </div>
-            <button class="btn add-to-cart" data-name="River Wide Pants" data-price="195">
+            <div class="product-meta">
+              <span class="stock-tag">Ships in 3 days</span>
+              <span>High-rise cut</span>
+            </div>
+            <button class="btn add-to-cart" data-name="River Wide Pants" data-price="195" data-image="assets2/aeff63bfc946b325676250ae794afff2c4c37a6b.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- City Drift Shirt -->
+          <article class="product-card reveal" data-category="mens" data-id="city-drift-shirt">
+            <div class="product-image-wrap">
+              <span class="product-badge green">Breathable</span>
+              <div class="product-image" style="background-image: url('assets/look-city-drift.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>City Drift Overshirt</h3>
+                <p class="muted">Slate raw cotton</p>
+              </div>
+              <span class="price">$175</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Boxy drape</span>
+            </div>
+            <button class="btn add-to-cart" data-name="City Drift Overshirt" data-price="175" data-image="assets/look-city-drift.jpg">
               Add to cart
             </button>
           </article>
         </div>
       </section>
 
+      <!-- SECTION: Loungewear & Sets -->
+      <section id="loungewear" class="section collection-section" data-section-category="loungewear">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-tag">Soft Living</span>
+            <h2>Loungewear & Sets</h2>
+          </div>
+          <p>Unmatched tactile comfort. Waffle organic knits, plush cocoa terry, and relaxed weekend silhouettes.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Waffle Knit Pullover -->
+          <article class="product-card reveal" data-category="loungewear" data-id="waffle-knit-pullover">
+            <div class="product-image-wrap">
+              <span class="product-badge green">Organic Cotton</span>
+              <div class="product-image" style="background-image: url('assets/waffle-pullover.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Waffle Knit Relaxed Pullover</h3>
+                <p class="muted">Oatmeal thermal cotton</p>
+              </div>
+              <span class="price">$165</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="XS">XS</button>
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Pre-washed softness</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Waffle Knit Relaxed Pullover" data-price="165" data-image="assets/waffle-pullover.jpg">
+              Add to cart
+            </button>
+          </article>
+
+          <!-- Coastline Lounge Cardigan -->
+          <article class="product-card reveal" data-category="loungewear" data-id="coastline-lounge-cardigan">
+            <div class="product-image-wrap">
+              <span class="product-badge gold">Soft Terry</span>
+              <div class="product-image" style="background-image: url('assets/look-coastline.jpg');"></div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>Coastline Kimono Cardigan</h3>
+                <p class="muted">Earthy stone cotton knit</p>
+              </div>
+              <span class="price">$195</span>
+            </div>
+            <div class="size-selector">
+              <span class="size-selector-label">Size</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip" data-size="S">S</button>
+                <button type="button" class="size-chip selected" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="product-meta">
+              <span class="stock-tag">In stock</span>
+              <span>Open front design</span>
+            </div>
+            <button class="btn add-to-cart" data-name="Coastline Kimono Cardigan" data-price="195" data-image="assets/look-coastline.jpg">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Lookbook Gallery -->
       <section id="gallery" class="section lookbook">
         <div class="section-header">
-          <h2>Gallery</h2>
-          <p>Layer light, tone-on-tone styling for coastal evenings and city mornings.</p>
+          <div>
+            <span class="section-tag" style="color:#5b5347;">Visual Diary</span>
+            <h2 style="color:#1f1c17;">Seasonal Lookbook</h2>
+          </div>
+          <p style="color:#5b5347;">Tone-on-tone textures captured between coastal twilight and early morning light.</p>
         </div>
         <div class="lookbook-grid">
           <div class="look tile-a reveal">
-            <p>01</p>
-            <h3>Coastline</h3>
-            <span>Arc Coat + Halo Shirt</span>
+            <p style="font-size:12px; font-weight:700;">LOOK 01</p>
+            <h3>Coastline Calm</h3>
+            <span>Arc Wrap Coat + Solstice Trouser</span>
           </div>
           <div class="look tile-b reveal">
-            <p>02</p>
-            <h3>City Drift</h3>
-            <span>Knit Top + Verve Trouser</span>
+            <p style="font-size:12px; font-weight:700;">LOOK 02</p>
+            <h3>Desert Architecture</h3>
+            <span>Dune Utility Jacket + River Wide Pants</span>
           </div>
           <div class="look tile-c reveal">
-            <p>03</p>
-            <h3>Sunroom</h3>
-            <span>Whisper Tee + Tide Skirt</span>
+            <p style="font-size:12px; font-weight:700;">LOOK 03</p>
+            <h3>Sunroom Reverie</h3>
+            <span>Caspian Trench + Cove Slip Dress</span>
           </div>
         </div>
       </section>
 
+      <!-- Values -->
       <section id="values" class="section ethos">
         <div class="section-header">
-          <h2>Our values</h2>
-          <p>Design that honors the hands behind it.</p>
+          <div>
+            <span class="section-tag">Guiding Principles</span>
+            <h2>Our Standards</h2>
+          </div>
+          <p>We reject fast seasonal turnover in favor of thoughtful, generational craftsmanship.</p>
         </div>
         <div class="ethos-grid">
           <div class="ethos-card reveal">
             <h3>Small-run manufacture</h3>
-            <p>
-              Each batch is limited to 120 pieces. We cut, sew, and finish in our Newark workshop
-              with a rotating roster of artisans.
+            <p class="muted">
+              Every production cycle is strictly limited to 120 pieces to eliminate surplus.
+              Artisans receive living wages with full health protection.
             </p>
           </div>
           <div class="ethos-card reveal">
-            <h3>Material honesty</h3>
-            <p>
-              Organic cottons, regenerative linen, and recycled hardware. We publish full material
-              disclosures for every style.
+            <h3>Material transparency</h3>
+            <p class="muted">
+              100% GOTS-certified organic cottons, regenerative flax, and corozo nut buttons.
+              Zero microplastics or harsh chemical softeners.
             </p>
           </div>
           <div class="ethos-card reveal">
-            <h3>Repair + renew</h3>
-            <p>
-              Complimentary repairs for 18 months, with a refresh service that re-dyes and reworks
-              archival pieces.
+            <h3>Lifetime repair service</h3>
+            <p class="muted">
+              We stand behind our seams. Complimentary tailoring repairs for 24 months, with an archival
+              re-dye program to breathe fresh life into well-loved garments.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="blog" class="section journal">
-        <div class="section-header">
-          <h2>From the blog</h2>
-          <p>Notes on process, people, and the places we source from.</p>
-        </div>
-        <div class="journal-grid">
-          <article class="journal-card reveal">
-            <p class="eyebrow">Material Study</p>
-            <h3>The linen fields of Carmague</h3>
-            <p class="muted">Why we chose sun-bleached flax for Collection 04.</p>
-          </article>
-          <article class="journal-card reveal">
-            <p class="eyebrow">Behind the scenes</p>
-            <h3>Meet our lead tailor, Sol</h3>
-            <p class="muted">A decade of tailoring, now in our workshop.</p>
-          </article>
-        </div>
-      </section>
-
+      <!-- Newsletter -->
       <section class="section newsletter">
         <div class="newsletter-card reveal">
           <div>
-            <h2>Join the email list</h2>
-            <p>Early access to new products, events, and style notes.</p>
+            <h2>Join the Velmora Collective</h2>
+            <p style="color:#d6c7b8;">Subscribers receive 48-hour early access to seasonal fabric releases and private fitting events.</p>
           </div>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Email address" aria-label="Email address" />
-            <button class="btn" type="submit">Subscribe</button>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Velmora.'); this.reset();">
+            <input type="email" placeholder="Your personal email address" aria-label="Email address" required />
+            <button class="btn" type="submit">Join the list</button>
           </form>
         </div>
       </section>
     </main>
 
+    <!-- Cart Panel & Drawer -->
     <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
-    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true" role="dialog" aria-label="Shopping Cart">
       <div class="cart-header">
-        <h3>Your cart</h3>
-        <button class="btn ghost" id="cartClose" type="button">Close</button>
+        <h3>Shopping Bag</h3>
+        <button class="cart-close-btn" id="cartClose" type="button" aria-label="Close cart">✕</button>
       </div>
+
+      <div class="shipping-perk">
+        <span>🌿</span>
+        <span>Eligible for <strong>Complimentary Carbon-Neutral Shipping</strong></span>
+      </div>
+
       <div class="cart-items" id="cartItems">
-        <p class="muted">Your cart is empty.</p>
+        <!-- Rendered dynamically -->
       </div>
+
       <div class="cart-summary">
+        <div class="cart-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-row">
+          <span>Estimated Shipping</span>
+          <span style="color:#27ae60; font-weight:600;">Complimentary</span>
+        </div>
         <div class="cart-total">
           <span>Total</span>
-          <strong id="cartTotal">$0</strong>
+          <span id="cartTotal">$0.00</span>
         </div>
-        <button class="btn" id="placeOrder" type="button">Place order</button>
+        <button class="btn" id="placeOrder" type="button">Proceed to Checkout</button>
       </div>
     </aside>
+
+    <!-- AUTH REQUIRED MODAL -->
+    <div class="modal-backdrop" id="authRequiredModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+      <div class="modal-card">
+        <div class="modal-icon-badge">🔒</div>
+        <div>
+          <p class="eyebrow" style="margin-bottom:6px;">Member Account Required</p>
+          <h3 id="authModalTitle">Sign in to add to cart</h3>
+        </div>
+        <p>
+          To maintain limited-batch inventory and reserve bespoke garments, please sign in or register
+          before adding items to your shopping bag.
+        </p>
+        <div class="modal-actions">
+          <button class="btn" id="modalLoginBtn">Sign in with Account</button>
+          <button class="btn ghost" id="modalSignupBtn">Create Free Account</button>
+          <button class="btn ghost" id="modalCancelBtn" style="border:none; color:var(--ink-soft); font-size:12px;">Continue Browsing</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION MODAL -->
+    <div class="modal-backdrop" id="orderConfirmModal" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-icon-badge" style="background:#eef7f0; color:#27ae60;">✓</div>
+        <div>
+          <p class="eyebrow" style="color:#27ae60; margin-bottom:4px;">Order Confirmed</p>
+          <h3>Thank you for your order</h3>
+        </div>
+        <p>Your slow-made garments are being reserved and prepared in our workshop.</p>
+        <div class="order-details-box" id="orderDetailsBox">
+          <!-- Dynamically populated -->
+        </div>
+        <div class="modal-actions">
+          <button class="btn" id="orderDoneBtn">Back to Store</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
     <footer class="site-footer">
       <div>
         <h3>Velmora</h3>
-        <p class="muted">Fittings by appointment • Delhi, India</p>
+        <p class="muted">Bespoke fittings by appointment • Delhi, India</p>
       </div>
       <div class="footer-links">
-        <a href="#">Shipping</a>
-        <a href="#">Sizing</a>
-        <a href="#">Returns</a>
-        <a href="#">Contact</a>
+        <a href="#featured">Collection</a>
+        <a href="#outerwear">Outerwear</a>
+        <a href="#womens">Women</a>
+        <a href="#mens">Men</a>
+        <a href="#values">Ethos</a>
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p class="muted">hello@velmora.in</p>
+        <p class="muted">concierge@velmora.in</p>
         <p class="muted">+91 98765 43210</p>
-        <p class="muted">www.velmora.in</p>
+        <p class="muted">velmora.in</p>
       </div>
       <p class="muted credits">
-        Photography: <a href="https://unsplash.com">Unsplash</a> and
-        <a href="https://www.pexels.com">Pexels</a>.
+        Velmora Atelier • Delhi Studio & Workshop
       </p>
-      <p class="muted footer-copy">© 2026 Velmora. All rights reserved.</p>
-      <p class="muted footer-copy">Made with &hearts; by Jagjeet</p>
+      <p class="muted footer-copy">© 2026 Velmora Garments. All rights reserved.</p>
     </footer>
 
+    <script src="auth.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
