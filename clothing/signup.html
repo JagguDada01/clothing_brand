@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Velmora — Sign up</title>
+    <title>Velmora — Create an Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,40 +15,52 @@
   <body class="auth-page">
     <header class="site-header">
       <div class="brand">
-        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
-        <div>
-          <p class="brand-name">Velmora</p>
-          <p class="brand-tag">Everyday essentials</p>
-        </div>
+        <a href="index.html" class="brand-link" style="display:flex;align-items:center;gap:16px;">
+          <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+          <div>
+            <p class="brand-name">Velmora</p>
+            <p class="brand-tag">Everyday essentials</p>
+          </div>
+        </a>
       </div>
       <div class="header-actions">
-        <a class="btn ghost" href="index.html">Back to home</a>
-        <a class="btn" href="login.html">Login</a>
+        <a class="btn ghost" href="index.html">← Back to Store</a>
+        <a class="btn" href="login.html">Sign in</a>
       </div>
     </header>
 
     <main class="auth-main">
       <section class="auth-card">
         <div>
-          <p class="eyebrow">Create your account</p>
-          <h1>Sign up</h1>
-          <p class="muted">Save your cart, track orders, and get early access.</p>
+          <p class="eyebrow">Join the Collective</p>
+          <h1>Create account</h1>
+          <p class="muted">Sign up to add items to your cart, reserve limited seasonal runs, and receive early drops.</p>
         </div>
-        <form class="auth-form">
-          <label for="signupName">Full name</label>
-          <input id="signupName" type="text" placeholder="Your name" required />
-          <label for="signupEmail">Email</label>
-          <input id="signupEmail" type="email" placeholder="you@example.com" required />
+
+        <div id="authNotice" class="auth-notice"></div>
+
+        <form class="auth-form" id="signupForm">
+          <label for="signupName">Full Name</label>
+          <input id="signupName" type="text" placeholder="e.g. Camille Laurent" required autocomplete="name" />
+
+          <label for="signupEmail">Email Address</label>
+          <input id="signupEmail" type="email" placeholder="you@example.com" required autocomplete="email" />
+
           <label for="signupPassword">Password</label>
-          <input id="signupPassword" type="password" placeholder="Create a password" required />
-          <label for="signupConfirm">Confirm password</label>
-          <input id="signupConfirm" type="password" placeholder="Repeat your password" required />
-          <button class="btn" type="submit">Create account</button>
+          <input id="signupPassword" type="password" placeholder="Minimum 6 characters" required autocomplete="new-password" />
+
+          <label for="signupConfirm">Confirm Password</label>
+          <input id="signupConfirm" type="password" placeholder="Repeat your password" required autocomplete="new-password" />
+
+          <button class="btn" type="submit">Create account & Continue</button>
         </form>
+
         <p class="muted auth-switch">
-          Already have an account? <a href="login.html">Login</a>
+          Already have an account? <a href="login.html">Sign in instead</a>
         </p>
       </section>
     </main>
+
+    <script src="auth.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Velmora — Login</title>
+    <title>Velmora — Sign In</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,14 +15,16 @@
   <body class="auth-page">
     <header class="site-header">
       <div class="brand">
-        <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
-        <div>
-          <p class="brand-name">Velmora</p>
-          <p class="brand-tag">Everyday essentials</p>
-        </div>
+        <a href="index.html" class="brand-link" style="display:flex;align-items:center;gap:16px;">
+          <img class="brand-logo" src="assets/logo-velmora.svg" alt="Velmora logo" />
+          <div>
+            <p class="brand-name">Velmora</p>
+            <p class="brand-tag">Everyday essentials</p>
+          </div>
+        </a>
       </div>
       <div class="header-actions">
-        <a class="btn ghost" href="index.html">Back to home</a>
+        <a class="btn ghost" href="index.html">← Back to Store</a>
         <a class="btn" href="signup.html">Sign up</a>
       </div>
     </header>
@@ -30,28 +32,52 @@
     <main class="auth-main">
       <section class="auth-card">
         <div>
-          <p class="eyebrow">Welcome back</p>
-          <h1>Login</h1>
-          <p class="muted">Sign in to view your orders and saved items.</p>
+          <p class="eyebrow">Member Access</p>
+          <h1>Sign in</h1>
+          <p class="muted">Sign in to add items to your cart, reserve limited editions, and track orders.</p>
         </div>
-        <form class="auth-form">
-          <label for="loginEmail">Email</label>
-          <input id="loginEmail" type="email" placeholder="you@example.com" required />
+
+        <div id="authNotice" class="auth-notice"></div>
+
+        <form class="auth-form" id="loginForm">
+          <label for="loginEmail">Email Address</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com" required autocomplete="email" />
+
           <label for="loginPassword">Password</label>
-          <input id="loginPassword" type="password" placeholder="••••••••" required />
+          <input id="loginPassword" type="password" placeholder="••••••••" required autocomplete="current-password" />
+
           <div class="auth-helper">
             <label class="checkbox">
-              <input type="checkbox" />
+              <input type="checkbox" checked />
               Remember me
             </label>
-            <a href="#">Forgot password?</a>
+            <a href="#" onclick="alert('Password reset link has been dispatched to your email.'); return false;">Forgot password?</a>
           </div>
-          <button class="btn" type="submit">Login</button>
+
+          <button class="btn" type="submit" id="submitLoginBtn">Sign in to Velmora</button>
         </form>
+
+        <div class="demo-account-box">
+          <p class="demo-title">Quick Demo Login</p>
+          <button type="button" class="btn-demo" id="demoUserBtn">
+            Auto-fill: <strong>eleanor@velmora.in</strong>
+          </button>
+        </div>
+
         <p class="muted auth-switch">
-          New here? <a href="signup.html">Create an account</a>
+          Don't have an account? <a href="signup.html">Create an account</a>
         </p>
       </section>
     </main>
+
+    <script src="auth.js"></script>
+    <script>
+      // Quick test filler
+      document.getElementById('demoUserBtn')?.addEventListener('click', () => {
+        document.getElementById('loginEmail').value = 'eleanor@velmora.in';
+        document.getElementById('loginPassword').value = 'password123';
+        document.getElementById('submitLoginBtn').click();
+      });
+    </script>
   </body>
 </html>
